@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCorePeliculas", "EFCorePeliculas\EFCorePeliculas.csproj", "{14E98EBB-F947-42DC-A0EC-CC24C81FC989}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14E98EBB-F947-42DC-A0EC-CC24C81FC989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14E98EBB-F947-42DC-A0EC-CC24C81FC989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14E98EBB-F947-42DC-A0EC-CC24C81FC989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14E98EBB-F947-42DC-A0EC-CC24C81FC989}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {281A5AA8-ED5B-4C72-92AF-8866ECC563FC}
+	EndGlobalSection
+EndGlobal
