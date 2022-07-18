@@ -67,5 +67,51 @@ namespace EFCorePeliculas.Controllers
                 .ToListAsync();
             return generos;
         }
+
+        [HttpPost]
+        public async Task<ActionResult> Post(Genero genero)
+        {
+            context.Add(genero);
+            await context.SaveChangesAsync();
+            return Ok();
+        }
+
+        [HttpPost("AddRange")]
+        public async Task<ActionResult> Post(Genero[] generos)
+        {
+            context.AddRange(generos);
+            await context.SaveChangesAsync();
+            return Ok();
+        }
+
+        [HttpPut("agregar2")]
+        public async Task<ActionResult> Agregar2(int id)
+        {
+            var genero = await context.generos.AsTracking().FirstOrDefaultAsync(g => g.Identificador == id);
+
+            if (genero is null)
+            {
+                return NotFound();
+            }
+
+            genero.Nombre += " 2";
+            await context.SaveChangesAsync();
+            return Ok();
+        }
+
+        [HttpDelete("{id:int}")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            var genero = await context.generos.FirstOrDefaultAsync(g => g.Identificador == id);
+
+            if (genero is null)
+            {
+                return NotFound();
+            }
+
+            context.Remove(genero);
+            await context.SaveChangesAsync();
+            return Ok();
+        }
     }
 }
