@@ -113,5 +113,35 @@ namespace EFCorePeliculas.Controllers
             await context.SaveChangesAsync();
             return Ok();
         }
+
+        [HttpDelete("borradoLogico/{id}")]
+        public async Task<ActionResult> DeleteLogico(int id)
+        {
+            var genero = await context.generos.AsTracking().FirstOrDefaultAsync(g => g.Identificador == id);
+
+            if (genero is null)
+            {
+                return NotFound();
+            }
+
+            genero.EstaBorrado = true;
+            await context.SaveChangesAsync();
+            return Ok();
+        }
+
+        [HttpPost("Restaurar/{id}")]
+        public async Task<ActionResult> Restaurar(int id)
+        {
+            var genero = await context.generos.AsTracking().IgnoreQueryFilters().FirstOrDefaultAsync(g => g.Identificador == id);
+
+            if (genero is null)
+            {
+                return NotFound();
+            }
+
+            genero.EstaBorrado = false;
+            await context.SaveChangesAsync();
+            return Ok();
+        }
     }
 }
